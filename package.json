@@ -1,0 +1,19 @@
+{
+  "name": "vuex-cheatsheet",
+  "version": "0.1.0",
+  "description": "Vuex Cheat Sheet",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "vue build -c build.config.js ./src/index.js",
+    "build": "vue build -c build.config.js --dist './docs/' --prod ./src/index.js",
+    "compile": "yarn dist -- --disable-compress"
+  },
+  "keywords": ["vue", "vuex", "cheatsheet"],
+  "author": "Marcos Neves <marcos.neves@gmail.com> (https://medium.com/vuejs-tips)",
+  "license": "MIT",
+  "dependencies": {
+    "clipboard": "^1.6.1",
+    "minireset.css": "^0.0.2",
+    "prismjs": "^1.6.0"
+  }
+}

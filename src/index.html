@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <title>Vuex CheatSheet</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="VueJs-Tips" />
+    <meta property="og:title" content="Vuex CheatSheet" />
+    <meta property="og:description" content="Complete API" />
+    <meta property="og:url" content="https://medium.com/vuejs-tips/vuex-complete-api-cheatsheet-c581cba1eb1d" />
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/400/1*jaJ6yhGVvrB96VPnSMKb_w.png" />
+
+    <link rel="icon" href="favico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
+  </head>
+
+  <body>
+    <div id="modal" class="hide-modal">
+      <button class="hide-modal">&times;</button>
+      <iframe id="iframe" name="iframe" src="https://vuex.vuejs.org/en/api.html"></iframe>
+    </div>
+
+<pre id="code-store">import Vuex from 'vuex'
+
+export default new Vuex.Store({
+  strict: true,
+  plugins: [],
+  modules: {},
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {}
+})
+</pre>
+
+<pre id="code-import">import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'</pre>
+
+    <div id="app">
+      <div class="columns">
+        <div class="panel panel-entry">
+          <h1>
+            entry.js
+            <a href="#" z-index="-1" class="copy" data-clipboard-target="#code-entry" data-tooltip="copy snippet">
+              <img src="clippy.svg" width="28" height="28" />
+            </a>
+          </h1>
+<pre><code class="language-javascript" id="code-entry">import Vue from 'vue'
+import Vuex from 'vuex'
+import store from './store'
+
+Vue.use(Vuex)
+
+new Vue({
+  el: '#app',
+  store
+})</code></pre>
+        </div>
+
+        <div class="panel panel-store">
+          <h1>
+            store.js
+            <a href="#" z-index="-1" class="copy" data-clipboard-target="#code-store" data-tooltip="copy snippet">
+              <img src="clippy.svg" width="28" height="28" />
+            </a>
+          </h1>
+          <ul>
+            <li><span>new</span> Vuex.Store<span>({</span></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/strict.html">strict<span>: true,</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-constructor-options">plugins<span>: [],</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/modules.html">modules<span>: {},</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/state.html">state<span>: {},</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/getters.html">getters<span>: {},</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/mutations.html">mutations<span>: {},</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/actions.html">actions<span>: {},</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/modules.html#namespacing">namespaced<span>: false</span></a></li>
+            <li>
+              <span>})</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel panel-maps">
+          <h1>
+            import map
+            <a href="#" z-index="-1" class="copy" data-tooltip="copy snippet" data-clipboard-target="#code-import">
+              <img src="clippy.svg" width="28" height="28" />
+            </a>
+          </h1>
+          <ul>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/state.html#the-mapstate-helper">mapState<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/getters.html#the-mapgetters-helper">mapGetters<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/mutations.html#committing-mutations-in-components">mapMutations<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/actions.html#dispatching-actions-in-components">mapActions<span>()</span></a></li>
+          </ul>
+        </div>
+
+        <div class="panel panel-instance">
+          <h1>Instance <small>store</small></h1>
+          <ul>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-properties">state</a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-properties">getters</a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">commit<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">dispatch<span>()</span></a></li>
+          </ul>
+        </div>
+
+        <div class="panel panel-instance">
+          <h1>Plugin Dev <small>store</small></h1>
+          <ul>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">replaceState<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">watch<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">subscribe<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">registerModule<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">unregisterModule<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/hot-reload.html">hotUpdate<span>()</span></a></li>
+          </ul>
+        </div>
+
+        <div class="panel panel-context">
+          <h1>Context Object</h1>
+          <ul>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-constructor-options">state</a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-constructor-options">rootState</a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-constructor-options">getters</a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-constructor-options">rootGetters</a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">commit<span>()</span></a></li>
+            <li><a target="iframe" href="https://vuex.vuejs.org/en/api.html#vuexstore-instance-methods">dispatch<span>()</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+body
+  background-color #21243F
+  color white
+  padding-bottom 0
+  font-family 'Source Code Pro', Helvetica, monospace
+  cursor default
+  padding padding
+  @media (max-width laptop)
+    padding (padding/2)
+
+.columns
+  column-gap padding
+  column-count 6
+  @media (max-width desktop)
+    column-count 5
+  @media (max-width laptop)
+    column-count 4
+    column-gap (padding/2)
+  @media (max-width netbook)
+    column-count 3
+  @media (max-width tablet)
+    column-count 2
+  @media (max-width mobile)
+    column-count 1

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vuex TODO</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h3>All Todos</h3>
+      <ol>
+        <li v-for="todo in allTodos" @click="toggleTodo(todo.id)">
+          {{todo.label}}
+        </li>
+      </ol>
+      <h3>Done Todos</h3>
+      <ol>
+        <li v-for="todo in doneTodos">
+          {{todo.label}}
+        </li>
+      </ol>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.2.6"></script>
+    <script src="https://unpkg.com/vuex@2.2.1"></script>
+
+    <script>
+      const store = new Vuex.Store({
+        state: {
+          todos: [{
+            id: 1,
+            label: 'Buy Milk',
+            done: false
+          }]
+        },
+
+        getters: {
+          allTodos: state => state.todos,
+          doneTodos (state, getters, rootState) {
+            return state.todos.filter(todo => todo.done)
+          },
+
+          getTodoById (state, getters, rootState) {
+            return id => state.todos.find(todo => todo.id === id)
+          }
+        },
+
+        mutations: {
+          toggleTodo (state, todo) {
+            todo.done = !todo.done
+          }
+        },
+
+        actions: {
+          toggleTodo ({commit, getters}, id) {
+            todo = getters.getTodoById(id)
+            commit('toggleTodo', todo)
+          }
+        }
+      })
+
+      new Vue({
+        el: '#app',
+        store,
+        computed: Vuex.mapGetters(['allTodos', 'doneTodos']),
+        methods: Vuex.mapActions(['toggleTodo'])
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+[data-tooltip]
+  &:after
+    position absolute
+    opacity 0
+    content attr(data-tooltip)
+    transition opacity .25s
+    pointer-events none
+    background inherit
+    font-size .8rem
+    padding: .4rem
+    font-weight normal
+    font-style normal
+    color black
+    border-radius 5px
+    z-index 1
+    font-family Helvetica
+  &:hover:after
+    opacity 1
+  &:focus:after
+    content 'copied!'
+
+.copy
+  cursor default
+  float right
+  border-radius 5px
+  background-color #eee
+  img
+    display block
+    padding 4px
+    width 28px
+    height @width
+    @media (max-width laptop)
+      width 24px
+      height @width
+  &:after
+    margin-top -5px
