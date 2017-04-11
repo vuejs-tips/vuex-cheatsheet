@@ -5,3 +5,8 @@
 [CheatSheet](http://vuejs-tips.github.io/vuex-cheatsheet)
 
 [Original Article](https://medium.com/vuejs-tips/vuex-complete-api-cheatsheet-c581cba1eb1d)
+
+### Korean
+[Repo](https://github.com/changjoo-park/vuex-cheatsheet/)
+
+[Web page](https://changjoo-park.github.io/vuex-cheatsheet/)
